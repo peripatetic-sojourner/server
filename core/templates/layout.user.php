@@ -70,6 +70,16 @@
 						value="" required
 						autocomplete="off" tabindex="5">
 				</form>
+				<div id="contactsmenu"
+					 style="position: relative">
+					<div id="contactsmenu-trigger"
+						 class="icon-contacts-dark"
+						 style="background-size: 16px 16px; cursor: pointer"></div>
+						<div id="contactsmenu-menu"
+							 class="popovermenu bubble menu"
+							 style="right: -16px;top: 38px;min-width: 250px;">
+						</div>
+				</div>
 				<div id="settings">
 					<div id="expand" tabindex="6" role="link" class="menutoggle">
 						<?php if ($_['enableAvatars']): ?>
@@ -162,5 +172,14 @@
 				<?php print_unescaped($_['content']); ?>
 			</div>
 		</div>
+
+		<script nonce="<?php p(\OC::$server->getContentSecurityPolicyNonceManager()->getNonce()) ?>" type="text/javascript">
+				$(function() {
+					new OC.ContactsMenu({
+						el: $('#contactsmenu-menu'),
+						trigger: $('#contactsmenu-trigger')
+					});
+				});
+		</script>
 	</body>
 </html>
