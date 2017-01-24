@@ -125,8 +125,8 @@ class Setup {
 	public function getSupportedDatabases($allowAllDatabases = false) {
 		$availableDatabases = array(
 			'sqlite' =>  array(
-				'type' => 'class',
-				'call' => 'SQLite3',
+				'type' => 'pdo',
+				'call' => 'sqlite',
 				'name' => 'SQLite'
 			),
 			'mysql' => array(
